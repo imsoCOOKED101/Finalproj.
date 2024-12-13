@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+      <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          background-image: url('mingming.jpg');
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          background-attachment: fixed;
+        }
+        div{
+          text-align: center;
+        }
+        h1{
+          color: #FFFF;
+          text-align: center;
+          font-size: 100px;
+        }
+        button{
+          background-color: #04AA6D;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;       
+        } 
+      </style>
+  <div class="global-container">
+    <h1 id="joke-title">Joke Joke Joke!!!</h1>
+    <br><br>
+
+    <p id="joke-dis">Loading</p>
+    <button id="btn-ans">Answer</button>
+    <button id="btn-ref">Refresh</button>
+    <p id="joke-answer" style="display: none;"></p>
+     </div>
+
+
+    <script>
+      fetch('https://official-joke-api.appspot.com/random_joke', {method: 'GET',})
+      .then(x => x.json())
+      .then(y => myDisplay(y))
+      .catch(error => {
+        alert('error man ka');
+      });
+
+    function myDisplay(y){
+      let jokeDis = document.getElementById('joke-dis');
+      let jokeAns = document.getElementById('joke-answer');
+      let button1 = document.getElementById('btn-ans');
+      let button2 = document.getElementById('btn-ref');
+
+    jokeDis.innerHTML = y.setup;
+    jokeAns.innerHTML = y.punchline;
+    
+    button1.onclick = function(){
+      jokeAns.style.display = "block";
+        }
+             button2.onclick = function(){
+             location.reload();
+        }
+    }
+    </script>
+</body>
+</html>
