@@ -2,7 +2,7 @@ fetch('https://official-joke-api.appspot.com/random_joke', {method: 'GET',})
       .then(x => x.json())
       .then(y => myDisplay(y))
       .catch(error => {
-        alert('error man ka');
+        alert('Opps error!');
       });
 
     function myDisplay(y){
