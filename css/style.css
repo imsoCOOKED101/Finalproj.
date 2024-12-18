@@ -7,7 +7,7 @@ body {
   }
   div{
     width: 300px;
-    border: 15px solid green;
+    border: 15px solid #0000;
     padding: 50px;
     margin: 20px; 
   }
@@ -26,7 +26,7 @@ body {
   button{
     background-color: #04AA6D;
     border: none;
-    color: white;
+    color: #ffff;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
