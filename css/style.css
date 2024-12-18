@@ -10,13 +10,13 @@ body {
   }
   #container{
     margin: 20px;
-    width: 200px;
-    height: 200px;
-    border: 2px solod black;
+    width: 50px;
+    height: 50px;
+    border: 2px solod #4B5945;
     padding: 20px;
   }
   h1{
-    color: black;
+    color: #1A1A19;
     text-align: center;
     font-size: 100px;
   }
