@@ -6,8 +6,14 @@ body {
     background-attachment: fixed;
   }
   div{
-    text-align: center;
-    
+    text-align: center; 
+  }
+  .container{
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    border: 2px solod black;
+    padding: 20px;
   }
   h1{
     color: #FFFF;
