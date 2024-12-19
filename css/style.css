@@ -5,8 +5,8 @@ body {
     background-attachment: fixed;
   }
   div{
-    width: 100px;
-    border: 15px solid #0000;
+    width: 200px;
+    border: 15px #0000;
     padding: 50px;
     margin: 20px; 
   }
