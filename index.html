@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JOKES FOR YOU</title>
-  <link rel="icon" href="/img/logo.jpg" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes For You</title>
+    <link rel="icon" href="img/logo.jpg" type="image/x-icon">
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <section class="section">
-    <div class="container">
-      <div id="joke_holder" class="box p-5">
-        <h1 class="title is-size-2 has-text-centered">JOKES!!</h1>
-        <p id="joke-dis" class="has-text-centered mt-4">Click "Get Joke" for a laugh!</p><br>
-        <p id="joke-ans" class="has-text-centered mt-4"></p>
-        <div class="buttons mt-4 is-centered">
-          <button id="btn-answer" class="button"><i class="fa-solid fa-lightbulb"></i> Show Answer</button>
-          <button id="btn-refresh" class="button ml-2"><i class="fa-solid fa-refresh"></i> Get Joke</button>
+    <section class="section">
+        <div class="container">
+            <div id="joke-holder" class="box p-5">
+                <h1 class="title is-size-2 has-text-centered">JOKES!!</h1>
+                <p id="joke-dis" class="has-text-centered">Click below for a joke!</p>
+                <div class="buttons mt-4 is-centered">
+                    <button id="btn-answer" class="button is-primary">Get Joke</button>
+                    <button id="btn-refresh" class="button is-warning">Refresh</button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <script src="app.js"></script>
+    </section>
 </body>
 </html>
