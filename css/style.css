@@ -1,11 +1,11 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url('mingming\ -\ Copy.jpg');
     /*background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;*/
   }
   .container{
-    background-image: url('mingming\ -\ Copy.jpg');
     background-color: #C4C1A4;
     position: absolute;
     top: 50%;
