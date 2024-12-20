@@ -11,7 +11,7 @@ body {
   background-color: #fff;
 }
 
-#joke-dis {
+#joke-dis, #joke-answer {
   font-size: 1.5rem;
   color: #333;
   padding: 20px;
