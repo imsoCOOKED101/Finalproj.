@@ -1,23 +1,41 @@
-fetch('https://official-joke-api.appspot.com/random_joke', {method: 'GET',})
-      .then(x => x.json())
-      .then(y => myDisplay(y))
-      .catch(error => {
-        alert('Opps error!');
-      });
+const jokeDis = document.getElementById('joke-dis');
+const jokeAns = document.getElementById('joke-ans');
+const btnAnswer = document.getElementById('btn-answer');
+const btnRefresh = document.getElementById('btn-refresh');
 
-    function myDisplay(y){
-      let jokeDis = document.getElementById('joke-dis');
-      let jokeAns = document.getElementById('joke-answer');
-      let button1 = document.getElementById('btn-ans');
-      let button2 = document.getElementById('btn-ref');
+let currentJoke = { question: '', answer: '' };
 
-    jokeDis.innerHTML = y.setup;
-    jokeAns.innerHTML = y.punchline;
-    
-    button1.onclick = function(){
-      jokeAns.style.display = "block";
-        }
-             button2.onclick = function(){
-             location.reload();
-        }
-    }
+// Fetch a joke from the API
+async function fetchJoke() {
+  try {
+    const response = await fetch('https://official-joke-api.appspot.com/random_joke');
+    const joke = await response.json();
+    currentJoke = {
+      question: joke.setup,
+      answer: joke.punchline
+    };
+    displayJoke();
+  } catch (error) {
+    console.error('Error fetching joke:', error);
+    jokeDis.textContent = 'Oops! Something went wrong. Please try again.';
+    jokeAns.textContent = '';
+  }
+}
+
+// Display the joke question
+function displayJoke() {
+  jokeDis.textContent = currentJoke.question;
+  jokeAns.textContent = '';
+}
+
+// Show the joke answer
+function showAnswer() {
+  jokeAns.textContent = currentJoke.answer;
+}
+
+// Event listeners
+btnAnswer.addEventListener('click', showAnswer);
+btnRefresh.addEventListener('click', fetchJoke);
+
+// Fetch the first joke on page load
+fetchJoke();
