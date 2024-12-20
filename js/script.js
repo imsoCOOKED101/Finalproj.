@@ -1,32 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const jokeDisplay = document.getElementById("joke-dis");
-  const btnAnswer = document.getElementById("btn-answer");
-  const btnRefresh = document.getElementById("btn-refresh");
-
-
-  const fetchJoke = async () => {
-    try {
-      const response = await fetch("https://official-joke-api.appspot.com/random_joke", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
+fetch('https://official-joke-api.appspot.com/random_joke', {method: 'GET',})
+      .then(x => x.json())
+      .then(y => myDisplay(y))
+      .catch(error => {
+        alert('Opps! no Jokes for u.');
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch joke");
-      }
+    function myDisplay(y){
+      let jokeDis = document.getElementById('joke-dis');
+      let jokeAns = document.getElementById('joke-answer');
+      let button1 = document.getElementById('btn-ans');
+      let button2 = document.getElementById('btn-ref');
 
-      const data = await response.json();
-      jokeDisplay.textContent = `${data.setup} - ${data.punchline}`;
-    } catch (error) {
-      jokeDisplay.textContent = "Oops! No jokes for u.";
-      console.error(error);
+    jokeDis.innerHTML = y.setup;
+    jokeAns.innerHTML = y.punchline;
+    
+    button1.onclick = function(){
+      jokeAns.style.display = "block";
+        }
+             button2.onclick = function(){
+             location.reload();
+        }
     }
-  };
-  btnAnswer.addEventListener("click", fetchJoke);
-
-  btnRefresh.addEventListener("click", () => {
-    jokeDisplay.textContent = "Click below for a joke!";
-  });
-});
