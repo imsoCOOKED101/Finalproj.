@@ -17,13 +17,13 @@
       "purpose": "maskable"
     },
     {
-      "src": "/dist/manifest-icon-192.maskable.png?v=1",
+      "src": "/csss/manifest-icon-192.maskable.png?v=1",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/dist/manifest-icon-192.maskable.png?v=1",
+      "src": "/css/manifest-icon-192.maskable.png?v=1",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
