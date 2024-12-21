@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const button1 = document.getElementById("btn-ans");
   const button2 = document.getElementById("btn-ref");
 
-  // Function to fetch and display a joke
   const fetchJoke = async () => {
       try {
           const response = await fetch('https://official-joke-api.appspot.com/random_joke', { method: 'GET' });
@@ -18,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   };
 
-  // Event listeners for buttons
   button1.onclick = () => {
       jokeAns.style.display = "block";
   };
@@ -27,6 +25,5 @@ document.addEventListener("DOMContentLoaded", () => {
       location.reload();
   };
 
-  // Fetch a joke on page load
   fetchJoke();
 });
