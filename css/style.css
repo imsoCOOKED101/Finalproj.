@@ -5,6 +5,15 @@ body {
   font-family: Arial, sans-serif;
   background-size: cover;
 }
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
 #joke-holder {
   max-width: 600px;
   margin: 50px auto;
